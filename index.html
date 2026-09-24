@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>From Gálvez to America250</title>
+<meta name="description" content="How one discovery at the Embassy of Spain grew into a countywide student project on Spain’s role in American independence, and a larger question about America’s alliances.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Public+Sans:wght@400;500;600&family=Carlito&display=swap">
+<style>
+  :root {
+    --ink: #1A1D24;
+    --body: #3A3D44;
+    --muted: #55585E;
+    --red: #8C1D22;
+    --red-dark: #5E1216;
+    --gold: #A87B22;
+    --rule: #E3E0DA;
+    --rule-2: #D5D1CA;
+    --alt: #F7F6F3;
+    --display: "Libre Caslon Display", Georgia, serif;
+    --serif: "Libre Caslon Text", Georgia, serif;
+    --sans: "Public Sans", "Helvetica Neue", Helvetica, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: #FFFFFF; color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  img { display: block; max-width: 100%; }
+  a { color: var(--red); text-underline-offset: 3px; }
+  a:hover { color: var(--red-dark); }
+  :focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+  p { margin: 0; }
+  h1, h2, h3 { margin: 0; font-weight: 400; }
+
+  /* ---------- Shared structure ---------- */
+  .pad { padding-left: 64px; padding-right: 64px; }
+  .inner { max-width: 1240px; margin: 0 auto; }
+  .chapter { padding-top: 48px; padding-bottom: 48px; border-top: 1px solid var(--rule); }
+  .chapter.alt { background: var(--alt); }
+  .stack { display: flex; flex-direction: column; gap: 24px; }
+  .label { display: block; font-size: 16px; font-weight: 600; color: var(--red); margin-bottom: 14px; }
+  h2 { font-family: var(--display); font-size: 48px; line-height: 1.1; }
+  .head { margin-bottom: 8px; }
+  .text { font-family: var(--serif); font-size: 19px; line-height: 1.75; }
+  .sans { font-size: 18px; line-height: 1.6; color: var(--body); }
+  .cap { margin: 0; font-size: 13px; line-height: 1.45; color: var(--muted); }
+  .two { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 56px; }
+  .two.center { align-items: center; }
+  .two.stretch { align-items: stretch; }
+  .two.w300 { grid-template-columns: minmax(0, 1fr) 300px; }
+  .two.w320 { grid-template-columns: minmax(0, 1fr) 320px; }
+  .two.msg { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); }
+  .trio { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .halves { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; align-items: start; }
+
+  /* A column whose images fill exactly the height of the text beside it */
+  .fit { position: relative; min-height: 0; }
+  .fit-inner { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 10px; }
+  
+  .pull { margin: 8px 0 0; display: flex; flex-direction: column; gap: 10px; }
+  .pull p { font-family: var(--serif); font-style: italic; font-size: 24px; line-height: 1.45; color: var(--red); }
+  .pull footer { font-size: 15px; color: var(--muted); }
+  .ask { font-family: var(--serif); font-style: italic; font-size: 24px; line-height: 1.45; color: var(--red); padding: 4px 0 4px 20px; border-left: 2px solid var(--gold); }
+
+  .btn { display: inline-flex; align-items: center; min-height: 46px; padding: 0 22px; border: 1.5px solid var(--ink); color: var(--ink); font-weight: 600; font-size: 15px; text-decoration: none; }
+  .btn:hover { background: var(--ink); color: #FFFFFF; }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn.full { width: 100%; justify-content: center; }
+
+  .watch { display: flex; align-items: center; gap: 20px; padding: 22px 26px; background: var(--ink); color: #FFFFFF; text-decoration: none; }
+  .watch:hover { color: #FFFFFF; background: #2A2E37; }
+  .watch .t { font-family: var(--serif); font-size: 22px; line-height: 1.3; display: block; }
+  .watch .s { font-size: 14px; color: #C9CBD1; display: block; margin-top: 4px; }
+
+  .video { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #111318; }
+  .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+  /* ---------- Top bar ---------- */
+  .bar { display: flex; justify-content: space-between; align-items: center; padding-top: 11px; padding-bottom: 11px; border-bottom: 1px solid var(--rule); }
+  .bar .name { font-family: var(--serif); font-size: 19px; color: var(--ink); text-decoration: none; }
+  .bar nav { display: flex; gap: 28px; font-size: 15px; }
+  .bar nav a { color: var(--ink); text-decoration: none; }
+  .bar nav a:hover { color: var(--red); }
+
+  /* ---------- Hero ---------- */
+  .hero { padding-top: 44px; padding-bottom: 40px; }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; column-gap: 56px; align-items: center; }
+  .hero h1 { font-family: var(--display); font-size: clamp(38px, 5vw, 68px); line-height: 1.2; letter-spacing: -.01em; text-wrap: balance; }
+  .hero .sub { font-family: var(--serif); font-size: 22px; line-height: 1.4; color: var(--red); margin-top: 10px; }
+  .hero .sans { font-size: 18px; }
+  .hero .ask { font-size: 23px; }
+  .rule-short { width: 64px; height: 1px; background: var(--gold); margin-top: 4px; }
+  .byline { display: flex; flex-direction: column; gap: 4px; }
+  .byline b { font-size: 17px; font-weight: 600; }
+  .byline span { font-size: 15px; line-height: 1.5; color: var(--muted); }
+
+  /* ---------- Letter ---------- */
+  .letter { background: #FFFFFF; border: 1px solid var(--rule); padding: 44px 56px 34px; font-family: Carlito, Calibri, "Public Sans", Arial, sans-serif; font-size: 15px; line-height: 1.6; color: var(--ink); }
+  .letter .lhead { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 40px; margin-bottom: 28px; }
+  .letter .j { margin: 0 0 16px; text-align: justify; }
+  .letter .sig { display: flex; flex-direction: column; align-items: center; margin-top: 4px; }
+  .letter .foot { margin-top: 28px; text-align: center; font-size: 12px; line-height: 1.5; color: var(--body); }
+
+  /* ---------- Stats ---------- */
+  .stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; row-gap: 28px; padding-top: 8px; }
+  .stat { display: flex; flex-direction: column; gap: 8px; padding-top: 14px; border-top: 1px solid var(--ink); }
+  .stat .n { font-family: var(--display); font-size: 48px; line-height: 1; color: var(--red); }
+  .stat .n.sm { font-size: 38px; }
+  .stat .l { font-size: 16px; line-height: 1.5; }
+
+  /* ---------- Voices ---------- */
+  .voice { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 20px; align-items: start; padding-top: 20px; border-top: 1px solid var(--rule-2); }
+  .voice.noimg { grid-template-columns: minmax(0, 1fr); }
+  .voice blockquote { margin: 0; font-family: var(--serif); font-size: 17px; line-height: 1.55; }
+  .voice .who { font-size: 13px; line-height: 1.5; color: var(--muted); margin-top: 8px; }
+  .voice .context { font-size: 14px; line-height: 1.5; color: var(--muted); margin-top: 8px; }
+
+  /* ---------- Essay titles ---------- */
+  .titles { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 48px; }
+  .titles .tr { display: block; font-family: var(--sans); font-size: 13px; color: var(--muted); margin-top: 2px; }
+  .titles li { font-family: var(--serif); font-size: 17px; line-height: 1.45; padding: 8px 0; border-top: 1px solid var(--rule); break-inside: avoid; }
+
+  .voices2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; row-gap: 24px; }
+
+  /* ---------- Photos ---------- */
+  img.pic { display: block; width: 100%; height: auto; aspect-ratio: var(--ar, auto); object-fit: cover; border: 1px solid var(--rule); box-sizing: border-box; }
+  img.pic.graphic { border: 0; object-fit: contain; }
+  .fit-inner > img.pic { flex: 1 1 0; min-height: 0; aspect-ratio: auto; }
+  .fit-inner > img.pic[data-grow] { flex-grow: 2.3; }
+  .voice > img.pic { width: 96px; }
+
+  .lettercard { display: grid; grid-template-columns: minmax(0, 440px) minmax(0, 1fr); gap: 32px; align-items: center; margin-bottom: -16px; }
+
+  .intro { max-width: 780px; display: flex; flex-direction: column; gap: 22px; }
+  .measure { max-width: 860px; }
+  .words { display: flex; flex-direction: column; gap: 22px; padding-left: 22px; border-left: 2px solid var(--gold); }
+  .words-lead { font-size: 15px; font-weight: 600; color: var(--muted); }
+  .q { font-family: var(--serif); font-size: 20px; line-height: 1.5; color: var(--ink); margin: 10px 0 10px 32px; }
+  .trio figure .cap { font-size: 12.5px; }
+
+  .voices3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 40px; row-gap: 28px; }
+  .voices3 .voice { grid-template-columns: minmax(0, 1fr); gap: 16px; align-content: start; }
+  .voices3 .vtop { display: flex; align-items: center; gap: 16px; }
+  .voices3 .vtop img.pic { width: 72px; flex: none; }
+  .voices3 .vtop .who { margin: 0; font-size: 13.5px; }
+  .voices3 .vtop .who b { font-weight: 600; color: var(--ink); font-size: 15px; }
+
+  /* ---------- Posters ---------- */
+  .posters { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 14px; }
+
+  /* ---------- Timeline ---------- */
+  .timeline { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); column-gap: 24px; row-gap: 28px; }
+  .timeline li { display: flex; flex-direction: column; gap: 8px; padding-top: 16px; border-top: 2px solid var(--red); }
+  .timeline time { font-size: 15px; font-weight: 600; color: var(--red); }
+  .timeline p { font-size: 15px; line-height: 1.5; }
+
+  /* ---------- Resources ---------- */
+  .res { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+  .res li { border-bottom: 1px solid var(--rule-2); }
+  .res a { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding: 14px 0; color: var(--ink); text-decoration: none; }
+  .res .t { font-family: var(--serif); font-size: 18px; }
+  .res .d { font-size: 14px; color: var(--muted); white-space: nowrap; }
+  .res a:hover .t { color: var(--red); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1100px) {
+    .timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .posters { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+  @media (max-width: 900px) {
+    .pad { padding-left: 22px; padding-right: 22px; }
+    h2 { font-size: 32px; }
+    .bar nav { display: none; }
+    .voices2, .voices3, .lettercard, .trio { grid-template-columns: minmax(0, 1fr); }
+    .q { margin-left: 14px; }
+    .two, .two.w300, .two.w320, .two.msg, .halves { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+    .fit .ph { max-width: 340px; }
+    .hero-grid { grid-template-columns: minmax(0, 1fr) 96px; column-gap: 20px; }
+    .fit, .fit-inner { position: static; }
+    .fit-inner > .ph, .fit-inner > .ph[data-grow], .fit-inner > img.pic, .fit-inner > img.pic[data-grow] { flex: none; aspect-ratio: var(--ar, 4 / 3); }
+    .fit img.pic { max-width: 340px; }
+    .letter { padding: 28px 22px 24px; }
+    .res a { flex-direction: column; gap: 2px; }
+  }
+  @media (max-width: 560px) {
+    .timeline, .stats { grid-template-columns: minmax(0, 1fr); }
+    .titles { columns: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="bar pad">
+  <a class="name" href="#top">Gálvez to 250</a>
+  <nav aria-label="Sections">
+    <a href="#history">The history</a>
+    <a href="#contest">The contest</a>
+    <a href="#embassy">Embassy</a>
+    <a href="#essays">The essays</a>
+    <a href="#ceremony">Ceremony</a>
+    <a href="#recognition">Recognition</a>
+    <a href="#america250">America250</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- =================== OPENING =================== -->
+<section id="top" class="hero pad">
+  <div class="inner stack" style="gap: 36px;">
+    <div class="hero-grid">
+      <div class="stack" style="gap: 16px;">
+        <h1>From Gálvez to America250</h1>
+        <p class="sub">How one discovery at the Embassy of Spain grew into a countywide student project and a larger question about America’s alliances</p>
+        <div class="rule-short"></div>
+        <div class="byline">
+          <b>By Ryan Minton</b>
+          <span>Founder and President, Langley World Affairs Club</span>
+          <span>Langley High School, Class of 2027</span>
+        </div>
+      </div>
+      <img class="pic graphic round" src="assets/galvez-contest-logo.png" alt="Bernardo de Gálvez Essay Contest logo" loading="lazy" style="--ar: 640 / 630; object-position: center;">
+    </div>
+    <div class="intro">
+      <p class="text">On February 14, 2025, I went to the Embassy of Spain in Washington, D.C. for a scheduled visit with a group of high school students from around the country. We were on a tight schedule, and as we hurried inside, I caught a quick glimpse of a bronze statue near the entrance. I remember looking at his face for a second and having the odd feeling that I should know who he was.</p>
+      <p class="text">I had no idea how much that quick glance would matter.</p>
+      <p class="text">Inside, Carla Cabrera Cuadrado and Antonio García Roger spoke with us about Spain’s role in American history and about Bernardo de Gálvez. At one point, Antonio asked how many of us had heard of Gálvez.</p>
+      <p class="text">I looked around the room. Not one hand went up. Mine stayed down too.</p>
+      <p class="text">There were around 50 of us in the room. It was an awkward few seconds. I had studied the American Revolution for years, and honestly, I was embarrassed that I had never heard his name. Yet there I was, sitting in the Embassy of Spain, learning from Spanish diplomats about a part of my own country’s founding history that I knew nothing about.</p>
+      <p class="text">When I came back outside, I stopped at the statue again. Earlier, I had barely noticed it. Now I knew who Gálvez was.</p>
+      <p class="text">That night, I went home and started reading about him for myself. I wanted to see whether what I had heard at the Embassy held up. It did.</p>
+      <p class="text">I felt like I had to do something with what I had learned. But simply telling other students about Gálvez did not seem like enough. I wanted them to have their own discovery, the way I had.</p>
+      <p class="text">So I started putting together the Bernardo de Gálvez Essay Contest. With the support of the Embassy of Spain, the Langley World Affairs Club invited students in grades 7 through 12 across Fairfax County Public Schools, a school system of more than 177,000 students in Northern Virginia just outside Washington, D.C., to research Gálvez, examine Spain’s role in American independence, and reach their own conclusions.</p>
+      <p class="text">Seventy-one students from 16 schools were ultimately recognized for their work by Ambassador Ángeles Moreno and Fairfax County Public Schools Superintendent Dr. Michelle Reid.</p>
+      <p class="text">I had created the contest hoping other students would discover something for themselves. But as I began reading their essays, I realized I was still discovering things too.</p>
+      <p class="text">Gálvez began to represent something larger to me. He made me see what an alliance could actually do. Spain’s support for the American Revolution was not merely symbolic. It had real consequences for the war and for the country being born.</p>
+      <p class="text">What excited me was realizing that an alliance I had barely known about had mattered so much. And it made me wonder:</p>
+      <p class="q">If I could get this far without knowing about an alliance that mattered so much, could there be other alliances important to the American experience that were still waiting for students like me to discover them?</p>
+      <p class="text">By the time we gathered for the awards ceremony at the Spanish Cultural Center, I knew the question I wanted to ask next:</p>
+      <p class="q">How has the relationship between Europe and the United States shaped the American story?</p>
+      <p class="text">And behind that was another question:</p>
+      <p class="q">How do we help students understand alliances before asking them to judge any particular one?</p>
+      <p class="text">I wanted to see whether those questions could become another student project, so I asked Antonio if he knew anyone at the Delegation of the European Union to the United States who might be interested.</p>
+      <p class="text">He did more than give me a name. He introduced me directly to the EU Delegation and explained what we had built with the Gálvez contest. The Embassy of Spain also offered its support for what might come next.</p>
+      <p class="text">That introduction led to Alliances That Sustain America, a new countywide student essay initiative developed with the EU Delegation for America’s 250th anniversary and launched across Fairfax County Public Schools in September 2026.</p>
+      <p class="text">The contest is not designed to produce agreement.</p>
+      <p class="text">It is designed to produce understanding.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================== THE HISTORY =================== -->
+<section id="history" class="chapter pad">
+  <div class="inner two stretch w300">
+    <div class="stack">
+      <div class="head"><span class="label">1776 to 1783</span><h2>Spain and the American Revolution</h2></div>
+      <p class="text">Bernardo de Gálvez became governor of Spanish Louisiana in 1777. From New Orleans, before Spain had entered the war, he allowed gunpowder, muskets, medicine, and cloth to move up the Mississippi River to American forces, working with the American agent Oliver Pollock to supply George Rogers Clark’s campaign in the Illinois country.</p>
+      <p class="text">Spain declared war on Great Britain in June 1779. That fall, Gálvez led a force of Spanish regulars, Louisiana militia, free Black companies, and Choctaw allies that took the British posts at Manchac, Baton Rouge, and Natchez. In March 1780 he captured Mobile. In 1781 he laid siege to Pensacola, the capital of British West Florida. When the Spanish fleet hesitated to enter the bay under British guns, Gálvez sailed in first aboard the brig <i>Galveztown</i>, and the fleet followed. Pensacola surrendered on May 8, 1781.</p>
+      <p class="text">By the end of the campaign, Britain had lost the lower Mississippi and the Gulf Coast, and no longer held a base on the Gulf from which to strike at the southern states. The same year, funds raised in Spanish Havana helped pay for the French fleet that sailed to the Chesapeake before the victory at Yorktown.</p>
+      <p class="text">Gálvez took the motto “Yo solo,” “I alone,” for his coat of arms in memory of Pensacola. Galveston, Texas, bears his name, his portrait hangs in the U.S. Capitol, and in 2014 Congress made him an honorary citizen of the United States.</p>
+      <p class="text">Gálvez does not replace the figures students already know from the Revolution. He adds another dimension to the history.</p>
+    </div>
+    <div class="fit">
+      <div class="fit-inner">
+        <!-- ASSET: HISTORY-01 (portrait by José Germán de Alfaro, 1785; public domain, Wikimedia Commons) -->
+        <img class="pic" src="assets/galvez-historical-portrait.jpg" alt="Portrait of Bernardo de Gálvez in a blue coat with gold embroidery and a red waistcoat, with an inscription along the bottom" loading="lazy" style="--ar: 500 / 680; object-position: center top;">
+        <p class="cap">Bernardo de Gálvez, Count of Gálvez. Portrait by José Germán de Alfaro, 1785. Public domain, via Wikimedia Commons.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== TURNING DISCOVERY INTO STUDENT SCHOLARSHIP =================== -->
+<section id="contest" class="chapter alt pad">
+  <div class="inner two stretch w300">
+    <div class="stack">
+      <div class="head"><span class="label">February 2025</span><h2>Turning Discovery into Student Scholarship</h2></div>
+      <blockquote class="pull"><p>“My hope is that other students will come to know this important patriot, just as readily as they know figures like Paul Revere.”</p><footer>Ryan Minton, March 2025</footer></blockquote>
+      <p class="text">Ryan did not want to simply tell other students who Bernardo de Gálvez was. He wanted to give them the chance to make the discovery for themselves.</p>
+      <p class="text">Through the Langley World Affairs Club, that idea became the Bernardo de Gálvez Essay Contest, open to Fairfax County Public Schools students in grades 7 through 12.</p>
+      <p class="text">The contest asked students to research Gálvez, examine Spain’s role in American independence, weigh the evidence, and reach their own conclusions. The point was not to tell students what to think. It was to give them a reason to look.</p>
+    </div>
+    <div class="fit">
+      <div class="fit-inner">
+        <img class="pic" src="assets/galvez-statue-figure.jpg" alt="Bernardo de Gálvez statue" loading="lazy" style="--ar: 507 / 915; object-position: center top;">
+        <p class="cap">The statue of Bernardo de Gálvez outside the Embassy of Spain in Washington, D.C. Ryan hurried past it on February 14, 2025, without knowing who Gálvez was. By the time he left the Embassy that afternoon, the same statue meant something entirely different.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== LAUNCHED WITH THE EMBASSY OF SPAIN =================== -->
+<section id="embassy" class="chapter pad">
+  <div class="inner stack" style="gap: 48px;">
+    <div class="two stretch w300">
+      <div class="stack">
+        <div class="head"><span class="label">March 11, 2025</span><h2>Launched with the Embassy of Spain</h2></div>
+        <blockquote class="pull"><p>“By inspiring students to explore Gálvez’s impact, your contest plays an important role in deepening historical understanding and appreciation of our shared heritage.”</p><footer>Ambassador Ángeles Moreno, letter of support</footer></blockquote>
+        <p class="text">Less than a month after the visit that started it, Ryan was back at the Embassy of Spain. This time, he was not there to learn who Gálvez was. He was there to launch a student project built around that discovery.</p>
+        <p class="text">On March 11, 2025, the Embassy gave the Bernardo de Gálvez Essay Contest its full support. Ambassador Ángeles Moreno encouraged students across Fairfax County Public Schools to participate, writing that the initiative could deepen understanding of the history shared by Spain and the United States.</p>
+        <p class="text">The same Embassy that had introduced Ryan to Gálvez was now helping him give other students the chance to investigate that history for themselves.</p>
+        <div class="btns">
+          <a class="btn full" href="https://drive.google.com/file/d/1xCgLa0jqtVggnEm8GopLn5Nh_T6GbhwU/view" target="_blank" rel="noopener">Read Ambassador Moreno’s Letter of Support</a>
+        </div>
+      </div>
+      <div class="fit">
+      <div class="fit-inner">
+        <img class="pic" src="assets/embassy-launch-2025.jpg" alt="March 11, 2025 Embassy launch photo" loading="lazy" style="--ar: 527 / 690;; object-position: center 45%;" data-grow>
+        <p class="cap">March 11, 2025, at the Embassy of Spain in Washington, D.C. From left: Antonio García Roger, Political Counselor; Ryan Minton, President of the Langley World Affairs Club; and Carla Cabrera Cuadrado, Public Diplomacy Officer.</p>
+      </div>
+    </div>
+    </div>
+
+    <div class="lettercard">
+      <!-- ASSET: AMBASSADOR-01 -->
+      <img class="pic" src="assets/ambassador-moreno.jpg" alt="Ambassador Ángeles Moreno" loading="lazy" style="--ar: 1213 / 628;; object-position: 72% 30%;">
+      <div class="stack" style="gap: 6px;">
+        <span class="label" style="margin: 0;">Letter of support</span>
+        <p style="font-family: var(--display); font-size: 30px; line-height: 1.15;">Ambassador Ángeles Moreno Bau</p>
+        <p class="sans" style="font-size: 16px;">Ambassador of Spain to the United States. Photo courtesy of the Embassy of Spain. Used with permission.</p>
+      </div>
+    </div>
+
+    <article class="letter" aria-label="Letter of support from the Ambassador of Spain, March 11, 2025">
+      <div class="lhead">
+        <!-- ASSET: LETTERHEAD-01 -->
+        <img class="pic graphic" src="assets/embassy-letterhead.png" alt="La Embajadora de España letterhead" loading="lazy" style="--ar: 721 / 385; width: 150px;; object-position: center;">
+        <p>Washington D.C. March 11, 2025</p>
+      </div>
+      <p style="margin: 0 0 24px;">Ryan Minton<br>President, Langley World Affairs Club<br>Langley High School<br>McLean, VA</p>
+      <p style="margin: 0 0 16px;">Dear Mr. Minton,</p>
+      <p class="j">I am honored to express the Embassy of Spain’s full support for the Bernardo de Gálvez: A Crucial Ally in American Independence essay contest.</p>
+      <p class="j">Bernardo de Gálvez was a key figure in the American Revolutionary War, whose leadership, bravery and strategic brilliance helped secure victory for the American Patriots. His contributions forged an enduring bond between Spain and the United States, one that continues to shape our strong partnership today. By inspiring students to explore Gálvez’s impact, your contest plays an important role in deepening historical understanding and appreciation of our shared heritage.</p>
+      <p class="j">We hope this initiative will spark curiosity and engagement with both American and Spanish history. We encourage students across Fairfax County Public Schools to participate, as learning about figures like Gálvez not only enriches historical knowledge but also reinforces the shared values that define Spain-U.S. relations.</p>
+      <p class="j">The Embassy of Spain commends you and the Langley World Affairs Club for your dedication to fostering global awareness and meaningful dialogue among students. We look forward to further engagement with your school and community.</p>
+      <p class="j">Best wishes for the success of this contest, we look forward to the insightful perspectives it will inspire.</p>
+      <p>Respectfully,</p>
+      <div class="sig">
+        <!-- ASSET: SIGNATURE-01 -->
+        <img class="pic graphic" src="assets/ambassador-signature.png" alt="signature of Ángeles Moreno" loading="lazy" style="--ar: 148 / 112; width: 92px;; object-position: center;">
+        <p>Ángeles Moreno</p>
+      </div>
+      <p class="foot">Embassy of Spain, 2375 Pennsylvania Ave., N.W. Washington, D.C. 20037<br>Tel. +1 202 7282340, E-mail: emb.washington.sec@maec.es</p>
+    </article>
+  </div>
+</section>
+
+<!-- =================== TAKING GÁLVEZ ACROSS FAIRFAX COUNTY =================== -->
+<section id="outreach" class="chapter alt pad">
+  <div class="inner stack" style="gap: 40px;">
+    <div class="two center">
+      <div class="stack">
+        <div class="head"><span class="label">Spring 2025</span><h2>Taking Gálvez Across Fairfax County</h2></div>
+        <p class="text">The Embassy had opened the door. Now Ryan had to get Gálvez in front of students.</p>
+        <p class="text">Ryan built the outreach campaign through the Langley World Affairs Club, creating the materials needed to take the contest across Fairfax County. He developed a press and media kit with ready-to-use emails, newsletter copy, morning announcements, flyers, social media posts, and other materials that teachers, librarians, and school administrators could share directly with students.</p>
+        <p class="text">Outreach went to English, history and social studies, and Spanish-language educators across Fairfax County. Teachers posted the contest in Schoology, announced it in class, shared it with Spanish Honor Societies, and displayed materials in classrooms and hallways. Fairfax County Public Library branches brought the effort beyond the schools and into places students and families visited every day.</p>
+        <p class="text">Ryan also created a series for the Langley World Affairs Club’s Instagram account introducing Gálvez, Spain’s Gulf Coast campaign, and the Siege of Pensacola. The goal was the same throughout the campaign: give students enough to become interested, then give them a reason to investigate the history for themselves.</p>
+        <p class="text">Every flyer, classroom announcement, library display, and social media post created another opportunity for a student to encounter Gálvez and Spain’s role in American independence.</p>
+        <h3 style="font-family: var(--display); font-size: 28px; line-height: 1.15; margin-top: 8px;">The Reach</h3>
+        <div class="stats">
+          <div class="stat"><span class="n">Nearly 2,000</span><span class="l">Personalized outreach emails sent across two rounds</span></div>
+          <div class="stat"><span class="n">16 of 23</span><span class="l">Fairfax County Public Library branches confirmed displaying contest materials</span></div>
+          <div class="stat"><span class="n sm">38 educators across 18 high schools</span><span class="l">Agreed to promote the contest</span></div>
+          <div class="stat"><span class="n sm">23 educators across 10 middle schools</span><span class="l">Agreed to promote the contest</span></div>
+        </div>
+      </div>
+      <div class="stack" style="gap: 24px;">
+        <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
+        <img class="pic" src="assets/library-outreach.jpg" alt="contest materials at a Fairfax County public library" loading="lazy" style="--ar: 578 / 332; object-position: center;">
+        <figcaption class="cap">The Bernardo de Gálvez Essay Contest flyer at Dolley Madison Library in McLean, Virginia. Sixteen of Fairfax County’s 23 public library branches confirmed displaying contest materials, extending the project beyond schools and into the wider community.</figcaption>
+      </figure>
+        <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
+        <img class="pic" src="assets/outreach-02.jpg" alt="school or educator outreach" loading="lazy" style="--ar: 578 / 313; object-position: center;">
+        <figcaption class="cap">Members of the Langley World Affairs Club during the 2025 Gálvez contest campaign. Ryan developed the countywide outreach effort through the club, which served as the platform for the student-led project.</figcaption>
+      </figure>
+      </div>
+    </div>
+    <figure style="margin: 0; display: flex; flex-direction: column; gap: 12px;">
+      <div class="posters">
+        <!-- ASSET: OUTREACH-03 (series) -->
+        <img class="pic" src="assets/outreach-03-1.jpg" alt="contest graphic 1" loading="lazy" style="--ar: 300 / 340; object-position: center;">
+        <img class="pic" src="assets/outreach-03-2.jpg" alt="contest graphic 2" loading="lazy" style="--ar: 300 / 340; object-position: center;">
+        <img class="pic" src="assets/outreach-03-3.jpg" alt="contest graphic 3" loading="lazy" style="--ar: 300 / 340; object-position: center;">
+        <img class="pic" src="assets/outreach-03-4.jpg" alt="contest graphic 4" loading="lazy" style="--ar: 300 / 340; object-position: center;">
+        <img class="pic" src="assets/outreach-03-5.jpg" alt="contest graphic 5" loading="lazy" style="--ar: 300 / 340; object-position: center;">
+        <img class="pic" src="assets/outreach-03-6.jpg" alt="contest graphic 6" loading="lazy" style="--ar: 300 / 340; object-position: center;">
+        <img class="pic" src="assets/outreach-03-7.jpg" alt="contest graphic 7" loading="lazy" style="--ar: 300 / 340; object-position: center;">
+        <img class="pic" src="assets/outreach-03-8.jpg" alt="contest graphic 8" loading="lazy" style="--ar: 300 / 340; object-position: center;">
+      </div>
+      <figcaption class="cap" style="font-size: 14px;">Graphics Ryan created for the Langley World Affairs Club’s Instagram account, introducing students to Gálvez, Spain’s Gulf Coast campaign, and the Siege of Pensacola before inviting them to investigate the history for themselves.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- =================== WHAT STUDENTS DISCOVERED =================== -->
+<section id="essays" class="chapter pad">
+  <div class="inner stack" style="gap: 36px;">
+    <div class="stack measure">
+      <div class="head"><span class="label">Spring 2025</span><h2>What Students Discovered</h2></div>
+      <blockquote class="pull"><p>“To look deeper into his contribution, it’s imperative that we ask a critical question: How does one person tip the scales of a full-blown war?”</p><footer>From “How One Can Tip the Scales of War”</footer></blockquote>
+      <p class="text">Seventy-one students from 16 Fairfax County schools were recognized for their work, representing every eligible grade from 7 through 12. Five students chose to write their essays in Spanish.</p>
+      <p class="text">What emerged was far more varied than a single kind of historical essay.</p>
+      <p class="text">Students approached Gálvez from different directions. Some examined military strategy and the supply routes that supported the American cause. Others reconstructed the Siege of Pensacola, followed Gálvez from Louisiana through the Gulf Coast campaign, or explored the relationship between Spain and the United States after independence.</p>
+      <p class="text">They also found details that made the history memorable.</p>
+      <blockquote class="pull"><p style="font-size: 21px;">“His coat of arms depicted him sailing three ships, with the words ‘Yo Solo’ which means ‘I alone’, beneath, to remember his daring exploit at the Siege of Pensacola.”</p><footer>From “Yo Solo - A Biography of the Life of Bernardo de Gálvez”</footer></blockquote>
+      <p class="text">And some students came away thinking less about a single individual than about what countries can accomplish together.</p>
+      <blockquote class="pull" lang="es"><p style="font-size: 21px;">“La historia de Gálvez nos recuerda que ganar independencia necesita mucha colaboración y mucho apoyo.”</p><footer lang="en">“Gálvez’s story reminds us that winning independence takes a great deal of collaboration and support.”</footer><footer>From “La Historia de Bernardo de Gálvez,” written in Spanish</footer></blockquote>
+      <p class="text">For Ryan, reading the essays became another part of the discovery. Students were finding connections, arguments, and details he had not anticipated when he created the contest.</p>
+    </div>
+    <div class="stack" style="gap: 14px;">
+      <h3 style="font-family: var(--display); font-size: 26px;">A Selection of Student Essay Titles</h3>
+      <ul class="titles">
+        <li>The Crucial Strategic Chain</li>
+        <li>How One Can Tip the Scales of War</li>
+        <li>Yo Solo: The Courage and Strategy of Bernardo de Gálvez</li>
+        <li>Louisiana, New Spain</li>
+        <li>The Bridge Between Two Nations</li>
+        <li>Spain’s Silent Sword</li>
+        <li>The Spanish Eagle Soars With The American Spirit</li>
+        <li>Gálvez’s Vision: The Spanish-American Alliance That Shaped the Future</li>
+        <li>From Here to Eternity: The Lasting Legacy of Bernardo de Gálvez in U.S.–Spain Relations</li>
+        <li>Spain and America: A Lasting Relationship that Started with Revolution</li>
+        <li>Honor Our Past: How Gálvez and Spain Shaped the US-Spanish Bond</li>
+        <li lang="es">La Historia de Bernardo de Gálvez <span class="tr" lang="en">The Story of Bernardo de Gálvez</span></li>
+      </ul>
+      <p class="cap" style="font-size: 14px;">Student titles and excerpts are reproduced as originally written. English translations are provided for Spanish-language titles and excerpts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================== THE STUDENTS TAKE THE STAGE =================== -->
+<section id="ceremony" class="chapter alt pad">
+  <div class="inner stack" style="gap: 40px;">
+    <div class="halves" style="align-items: center;">
+      <div class="stack">
+        <div class="head"><span class="label">September 6, 2025</span><h2>The Students Take the Stage</h2></div>
+        <blockquote class="pull"><p>“A shared history, which is something we care about at the Embassy of Spain, something led by students … those were essays written by students, the contest was built by students.”</p><footer>Antonio García Roger, Political Counselor, Embassy of Spain</footer><footer>September 6, 2025</footer></blockquote>
+        <p class="text">Less than six months after the contest launched, students, families, educators, school leaders, and representatives of the Embassy of Spain gathered at the Spanish Cultural Center in Washington, D.C. for the inaugural Bernardo de Gálvez Essay Contest Awards Ceremony.</p>
+        <p class="text">The focus was now on the students. Seventy-one students from 16 Fairfax County schools were recognized for their work, representing every eligible grade from 7 through 12.</p>
+        <p class="text">They had taken an unfamiliar historical figure, investigated the evidence for themselves, and developed their own understanding of Gálvez and Spain’s role in American independence. Their work was recognized by Ambassador Ángeles Moreno Bau and Fairfax County Public Schools Superintendent Dr. Michelle Reid.</p>
+        <p class="text">What had begun with a question at the Embassy of Spain had become a room full of students who now knew enough about Gálvez to make their own arguments about why he and Spain mattered to American independence.</p>
+      </div>
+      <div class="stack" style="gap: 20px;">
+        <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
+        <img class="pic" src="assets/awards-students-wide.jpg" alt="wide photograph of the students at the awards ceremony" loading="lazy" style="--ar: 1800 / 843; object-position: center;">
+        <figcaption class="cap">Students recognized in the inaugural Bernardo de Gálvez Essay Contest at the Spanish Cultural Center in Washington, D.C., September 6, 2025. The 71 students recognized represented 16 Fairfax County schools and every eligible grade from 7 through 12.</figcaption>
+      </figure>
+        <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
+        <img class="pic" src="assets/awards-community.jpg" alt="students, families, educators and Embassy representatives at the ceremony" loading="lazy" style="--ar: 1400 / 933; object-position: center;">
+        <figcaption class="cap">Dr. Michelle Reid, Superintendent, Fairfax County Public Schools; Dr. Geovanny Ponce, Chief of Schools, FCPS; and Kyle McDaniel, At-Large Member of the Fairfax County School Board, meet with Langley World Affairs Club leadership at the 2025 Bernardo de Gálvez Essay Contest Awards Ceremony, Spanish Cultural Center, Washington, D.C., September 6, 2025.</figcaption>
+      </figure>
+      </div>
+    </div>
+
+    <div class="trio" style="display: grid; gap: 20px; align-items: start;">
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
+        <img class="pic" src="assets/ambassador-speaking.jpg" alt="Ambassador Moreno addressing the ceremony" loading="lazy" style="--ar: 1 / 1; object-position: center;">
+        <figcaption class="cap">Ambassador Ángeles Moreno Bau addresses the 2025 Bernardo de Gálvez Essay Contest Awards Ceremony at the Spanish Cultural Center in Washington, D.C., September 6, 2025.</figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
+        <img class="pic" src="assets/ceremony-hall.jpg" alt="the audience in the hall" loading="lazy" style="--ar: 1 / 1; object-position: center;">
+        <figcaption class="cap">Guests at the 2025 Bernardo de Gálvez Essay Contest Awards Ceremony, Spanish Cultural Center, Washington, D.C., September 6, 2025.</figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
+        <img class="pic" src="assets/ryan-ambassador-moreno.jpg" alt="Ryan Minton with Ambassador Ángeles Moreno" loading="lazy" style="--ar: 721 / 836; object-position: center;">
+        <figcaption class="cap">Ryan Minton, founder of the Bernardo de Gálvez Essay Contest, with Ambassador Ángeles Moreno Bau at the 2025 Awards Ceremony, Spanish Cultural Center, Washington, D.C., September 6, 2025.</figcaption>
+      </figure>
+    </div>
+    <div class="btns"><a class="btn full" href="https://www.langleyworldaffairs.org/2025-essay-award-recipients" target="_blank" rel="noopener">Meet the 2025 Essayists and Award Recipients</a></div>
+
+    <div class="stack measure" style="gap: 18px;">
+      <h3 style="font-family: var(--display); font-size: 30px; line-height: 1.15;">A View from Fairfax County Public Schools</h3>
+      <div class="voice">
+        <img class="pic" src="assets/michelle-reid.jpg" alt="Dr. Michelle Reid" loading="lazy" style="--ar: 4 / 5; object-position: center top;">
+        <div>
+          <blockquote style="font-size: 19px;">“I wonder if our Revolution would have been successful those many years ago had we not had the support and partnership of Bernardo de Gálvez.”</blockquote>
+          <p class="who">Dr. Michelle Reid, Superintendent, Fairfax County Public Schools</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="halves" style="align-items: start;">
+      <div class="stack" style="gap: 14px;">
+        <h3 style="font-family: var(--display); font-size: 28px; line-height: 1.15;">Watch the Ceremony</h3>
+        <!-- Official upload on the Embassy of Spain's YouTube channel -->
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/Ue617qrn4Qw" title="2025 Bernardo de Gálvez Essay Contest awards ceremony" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="stack" style="gap: 14px;">
+        <h3 style="font-family: var(--display); font-size: 28px; line-height: 1.15;">A Message from Ambassador Ángeles Moreno</h3>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/WKpxsgTh4Wc" title="A message from Ambassador Ángeles Moreno about the Bernardo de Gálvez Essay Contest" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <blockquote class="pull" style="margin: 0 auto; max-width: 700px; text-align: center;"><p style="font-size: 21px;">“Simply knowing wasn’t enough. He wanted others to know, too. So, he got to work.”</p><footer>Ángeles Moreno, Ambassador of Spain to the United States</footer></blockquote>
+  </div>
+</section>
+
+<!-- =================== FEATURED AT STATE OF OUR SCHOOLS =================== -->
+<section id="recognition" class="chapter pad">
+  <div class="inner halves" style="align-items: center;">
+    <div class="stack">
+      <div class="head"><span class="label">October 28, 2025</span><h2>Featured at State of Our Schools</h2></div>
+      <blockquote class="pull"><p>“FCPS has taught me not just to consume knowledge, but to produce and create it.”</p><footer>Ryan Minton, FCPS State of Our Schools, October 28, 2025</footer></blockquote>
+      <p class="text">Seven weeks after the awards ceremony, Fairfax County Public Schools brought the Gálvez project before a much larger audience.</p>
+      <p class="text">At its annual State of Our Schools program, attended by hundreds of students, educators, school leaders, School Board members, and community leaders, FCPS featured the Bernardo de Gálvez Essay Contest as one of three highlighted initiatives and the only one led by students.</p>
+      <p class="text">The audience first watched a message from Ambassador Ángeles Moreno Bau about Ryan’s discovery of Gálvez and the student project that followed. Ryan then joined Superintendent Dr. Michelle Reid on stage to discuss how the contest began, what students had discovered about Gálvez and Spain’s role in American independence, and what he had learned from creating it.</p>
+      <p class="text">The project had begun with Ryan realizing how much history he did not know. Now Fairfax County Public Schools was using it as an example of what can happen when students move from learning history to creating opportunities for others to investigate it.</p>
+    </div>
+    <div class="stack" style="gap: 20px;">
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
+        <img class="pic" src="assets/state-of-our-schools-ryan-reid.jpg" alt="Ryan Minton with Dr. Michelle Reid at State of Our Schools" loading="lazy" style="--ar: 1400 / 945; object-position: center;">
+        <figcaption class="cap">Ryan Minton with Fairfax County Public Schools Superintendent Dr. Michelle Reid at State of Our Schools, October 28, 2025.</figcaption>
+      </figure>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/xvgEN_dMru8?start=2431" title="FCPS State of Our Schools 2025, beginning at the Gálvez contest segment" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FROM GÁLVEZ TO AMERICA250 =================== -->
+<section id="america250" class="chapter alt pad">
+  <div class="inner two center w300">
+    <div class="stack">
+      <div class="head"><span class="label">America at 250</span><h2>From Gálvez to America250</h2></div>
+      <p class="text">In a September 17, 2026 letter to Fairfax County Public Schools students and the wider community, EU Ambassador Jovita Neliupšienė described the Delegation of the European Union to the United States as partnering with Ryan Minton and the Langley World Affairs Club on a new student-led initiative.</p>
+      <p class="text">She wrote:</p>
+      <blockquote class="pull"><p>“Every meaningful discovery begins with a thoughtful question.”</p><footer>Jovita Neliupšienė, Ambassador of the European Union to the United States</footer><footer>September 17, 2026</footer></blockquote>
+      <p class="text">That idea had already defined the Gálvez project.</p>
+      <p class="text">What began with Ryan asking who Bernardo de Gálvez was became a countywide effort to give other students the chance to investigate Spain’s role in American independence for themselves. Along the way, Gálvez also raised a larger question about the alliances that have shaped the United States.</p>
+      <p class="text">With an introduction from Antonio García Roger and the Embassy of Spain, Ryan met with the Delegation of the European Union to the United States on November 4, 2025. Over the following months, that conversation developed into Alliances That Sustain America, created by the Langley World Affairs Club in partnership with the EU Delegation for America’s 250th anniversary.</p>
+      <p class="text">The new contest invites Fairfax County students in grades 7 through 12 to investigate another question for themselves:</p>
+      <p class="q">How has the relationship between Europe and the United States shaped the American story?</p>
+      <p class="text">Award recipients will be recognized at the Delegation of the European Union to the United States in Washington, D.C.</p>
+      <p class="text">The Gálvez contest supplied both the idea and the bridge to what came next. Spain was the starting point.</p>
+      <a href="https://www.langleyworldaffairs.org/2026-essay-contest" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 24px; margin-top: 8px; text-decoration: none; color: #13294B;">
+        <img class="pic graphic round" src="assets/alliances-america250.png" alt="Alliances That Sustain America logo" loading="lazy" style="--ar: 598 / 564; width: 128px; flex: none;; object-position: center;">
+        <span style="display: flex; flex-direction: column; gap: 2px;">
+          <span style="font-family: var(--display); font-size: clamp(30px, 3.4vw, 42px); line-height: 1.1;">Alliances That Sustain America</span>
+          <span style="font-size: 15px; color: var(--muted); text-decoration: underline; text-underline-offset: 3px;">Explore the 2026 contest</span>
+        </span>
+      </a>
+    </div>
+    <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
+        <img class="pic" src="assets/galvez-statue-plaque.jpg" alt="Gálvez statue base and plaque" loading="lazy" style="--ar: 460 / 622; object-position: center bottom;">
+        <figcaption class="cap">The plaque beneath the Gálvez statue at the Embassy of Spain identifies him as a “Hero of the American Revolution” and an Honorary Citizen of the United States. It stands beneath the same statue Ryan hurried past on February 14, 2025, before knowing who Gálvez was.</figcaption>
+      </figure>
+  </div>
+</section>
+
+<!-- =================== TIMELINE =================== -->
+<section id="timeline" class="chapter pad">
+  <div class="inner stack" style="gap: 32px;">
+    <div class="head"><span class="label">Timeline</span><h2>From One Question to the Next</h2></div>
+    <ol class="timeline">
+      <li><time datetime="2025-02-14">February 14, 2025</time><p>A visit to the Embassy of Spain introduces Ryan to Bernardo de Gálvez and Spain’s role in American independence.</p></li>
+      <li><time datetime="2025-03-11">March 11, 2025</time><p>The Bernardo de Gálvez Essay Contest launches with the support of the Embassy of Spain.</p></li>
+      <li><time datetime="2025">Spring 2025</time><p>Countywide outreach brings the Gálvez project to educators, schools, libraries, and students across Fairfax County.</p></li>
+      <li><time datetime="2025-09-06">September 6, 2025</time><p>Seventy-one students from 16 Fairfax County schools are recognized at the Spanish Cultural Center in Washington, D.C.</p></li>
+      <li><time datetime="2025-10-28">October 28, 2025</time><p>FCPS features the contest at State of Our Schools as the only student-led initiative among three highlighted programs.</p></li>
+      <li><time datetime="2025-11-04">November 4, 2025</time><p>Following an introduction from the Embassy of Spain, Ryan meets with the Delegation of the European Union to the United States.</p></li>
+      <li><time datetime="2026-09">September 2026</time><p>Alliances That Sustain America launches across Fairfax County Public Schools for America’s 250th anniversary.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- =================== RESOURCES =================== -->
+<section id="resources" class="chapter alt pad">
+  <div class="inner stack" style="gap: 24px;">
+    <h2 style="font-size: 34px;">Related Resources</h2>
+    <ul class="res">
+      <li><a href="https://www.langleyworldaffairs.org/2025-essay-contest" target="_blank" rel="noopener"><span class="t">2025 Bernardo de Gálvez Essay Contest</span><span class="d">langleyworldaffairs.org</span></a></li>
+      <li><a href="https://www.langleyworldaffairs.org/2025-essay-award-recipients" target="_blank" rel="noopener"><span class="t">2025 Essayists and Award Recipients</span><span class="d">langleyworldaffairs.org</span></a></li>
+      <li><a href="https://www.youtube.com/watch?v=WKpxsgTh4Wc" target="_blank" rel="noopener"><span class="t">Message from Ambassador Ángeles Moreno</span><span class="d">YouTube</span></a></li>
+      <li><a href="https://www.youtube.com/watch?v=Ue617qrn4Qw" target="_blank" rel="noopener"><span class="t">2025 Bernardo de Gálvez Awards Ceremony</span><span class="d">Embassy of Spain, YouTube</span></a></li>
+      <li><a href="https://youtu.be/xvgEN_dMru8?si=XIo7kigdEsrObmJ7&amp;t=2431" target="_blank" rel="noopener"><span class="t">FCPS State of Our Schools 2025</span><span class="d">YouTube</span></a></li>
+      <li><a href="https://www.langleyworldaffairs.org/2026-essay-contest" target="_blank" rel="noopener"><span class="t">Alliances That Sustain America</span><span class="d">langleyworldaffairs.org</span></a></li>
+      <li><a href="https://america250.org/" target="_blank" rel="noopener"><span class="t">America250</span><span class="d">america250.org</span></a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="pad" style="padding-top: 24px; padding-bottom: 32px; border-top: 1px solid var(--rule);">
+  <div class="inner" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 40px; font-size: 15px; line-height: 1.6; color: var(--muted);">
+    <p>Written by Ryan Minton, Founder and President of the Langley World Affairs Club, Langley High School, McLean, Virginia.</p>
+    <p><a href="https://www.langleyworldaffairs.org" target="_blank" rel="noopener">langleyworldaffairs.org</a><br><a href="mailto:ryanminton09@gmail.com">ryanminton09@gmail.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
